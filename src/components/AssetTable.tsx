@@ -22,12 +22,15 @@ const AssetTable = () => {
 
   ]
 
+
+  const BASE_URI = 'https://asset-manager-1.herokuapp.com/api/v1/assets';
+
   // let data = [
   //   { name: 'manish', username: 'traptrick', email: 'themk85@gmail.com', phone: '9999999999', website: 'https://github.com/traptrick' }
   // ]  
 
   useEffect(() => {
-    axios.get(`https://asset-manager-mhp.herokuapp.com/api/v1/assets/`)
+    axios.get(`${BASE_URI}`)
       .then(res => {
         const users = res.data.data;
         setUser(users);
@@ -43,7 +46,7 @@ const AssetTable = () => {
     let errorList = []
 
     if (errorList.length < 1) {
-      axios.put(`https://asset-manager-mhp.herokuapp.com/api/v1/assets/update/${newData.id}`, newData)
+      axios.put(`${BASE_URI}/update/${newData.id}`, newData)
         .then(response => {
           const updateUser:any = [...user];
           const index = oldData.tableData.id;
@@ -71,7 +74,7 @@ const AssetTable = () => {
   //function for deleting a row
   const handleRowDelete = (oldData, resolve) => {
     console.log(oldData.id)
-    axios.get(`https://asset-manager-mhp.herokuapp.com/api/v1/assets/${oldData.id}`)
+    axios.get(`${BASE_URI}/${oldData.id}`)
       .then(response => {
         const dataDelete = [...user];
         const index = oldData.tableData.id;
@@ -92,7 +95,7 @@ const AssetTable = () => {
     let errorList = []
 
     if (errorList.length < 1) {
-      axios.post(`https://asset-manager-mhp.herokuapp.com/api/v1/assets/create/`, newData)
+      axios.post(`${BASE_URI}/create/`, newData)
         .then(response => {
           let newUserdata = [...user];
           newUserdata.push(newData);

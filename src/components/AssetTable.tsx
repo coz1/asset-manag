@@ -141,7 +141,7 @@ const AssetTable = () => {
             }),
           onRowDelete: (oldData) =>
             new Promise((resolve) => {
-              handleRowDelete(oldData, resolve)
+              //handleRowDelete(oldData, resolve)
             }),
         }}
       />

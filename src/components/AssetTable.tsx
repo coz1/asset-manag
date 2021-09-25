@@ -23,7 +23,9 @@ const AssetTable = () => {
   ]
 
 
-  const BASE_URI = 'https://asset-manager-1.herokuapp.com/api/v1/assets';
+  //const BASE_URI = 'http://localhost:5000/api/v1/assets';   //develop
+  const BASE_URI = 'https://asset-manager-1.herokuapp.com/api/v1/assets'; //production
+
 
   // let data = [
   //   { name: 'manish', username: 'traptrick', email: 'themk85@gmail.com', phone: '9999999999', website: 'https://github.com/traptrick' }
@@ -141,7 +143,7 @@ const AssetTable = () => {
             }),
           onRowDelete: (oldData) =>
             new Promise((resolve) => {
-              //handleRowDelete(oldData, resolve)
+              handleRowDelete(oldData, resolve)
             }),
         }}
       />

@@ -8,6 +8,6 @@ export default makeStyles((theme: Theme) =>
     table: {
       width: '50%',
       justifyContent: 'center'
-    }    
+    }  
   })
 );
